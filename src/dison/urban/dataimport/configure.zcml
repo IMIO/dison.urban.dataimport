@@ -40,4 +40,10 @@
         permission="zope2.View"
     />
 
+    <adapter
+        for="dison.urban.dataimport.settings.DisonImporterSettingsEditForm"
+        factory=".settings.DisonImporterFromSettingsForm"
+        provides="imio.urban.dataimport.urbaweb.interfaces.IUrbawebDataImporter"
+    />
+
 </configure>

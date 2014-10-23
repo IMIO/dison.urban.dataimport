@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<import-steps>
+
+ <import-step
+    id="dison.urban.dataimport-disonUrbawebImport"
+    handler="dison.urban.dataimport.importer.importDisonUrbaweb"
+    title="Urbaweb import for Dison"
+    version="2013-01-04T11:30:41.455297">
+  Urbaweb import for Dison
+ </import-step>
+
+</import-steps>

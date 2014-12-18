@@ -1,29 +1,38 @@
 # -*- coding: utf-8 -*-
 
-from imio.urban.dataimport.settings import ImporterSettingsEditForm
-from imio.urban.dataimport.urbaweb.settings import UrbawebImporterFromSettingsForm
-from imio.urban.dataimport.urbaweb.settings import UrbawebImporterSettings
+from imio.urban.dataimport.browser.controlpanel import ImporterControlPanel
+from imio.urban.dataimport.browser.import_panel import ImporterSettings
+from imio.urban.dataimport.browser.import_panel import ImporterSettingsForm
+from imio.urban.dataimport.urbaweb.settings import UrbawebImporterFromImportSettings
 
 
-class DisonImporterSettingsEditForm(ImporterSettingsEditForm):
+class DisonImporterSettingsForm(ImporterSettingsForm):
     """ """
 
 
-class DisonImporterSettings(UrbawebImporterSettings):
+class DisonImporterSettings(ImporterSettings):
     """ """
-    form = DisonImporterSettingsEditForm
+    form = DisonImporterSettingsForm
 
 
-class DisonImporterFromSettingsForm(UrbawebImporterFromSettingsForm):
+class DisonImporterControlPanel(ImporterControlPanel):
+    """ """
+    import_form = DisonImporterSettings
+
+
+class DisonImporterFromImportSettings(UrbawebImporterFromImportSettings):
     """ """
 
     def get_importer_settings(self):
         """
         Return the db name to read.
         """
+        settings = super(DisonImporterFromImportSettings, self).get_importer_settings()
 
-        args = {
+        db_settings = {
             'db_name': 'Tab_Urba 97.mdb',
         }
 
-        return args
+        settings.update(db_settings)
+
+        return settings

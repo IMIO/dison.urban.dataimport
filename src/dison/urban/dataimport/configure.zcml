@@ -36,13 +36,13 @@
     <browser:page
         name="dataimport-controlpanel"
         for="Products.CMFPlone.interfaces.IPloneSiteRoot"
-        class=".settings.DisonImporterSettings"
+        class=".settings.DisonImporterControlPanel"
         permission="zope2.View"
     />
 
     <adapter
-        for="dison.urban.dataimport.settings.DisonImporterSettingsEditForm"
-        factory=".settings.DisonImporterFromSettingsForm"
+        for="dison.urban.dataimport.settings.DisonImporterSettingsForm"
+        factory=".settings.DisonImporterFromImportSettings"
         provides="imio.urban.dataimport.urbaweb.interfaces.IUrbawebDataImporter"
     />
 

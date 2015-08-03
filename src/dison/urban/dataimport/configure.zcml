@@ -15,6 +15,7 @@
     <includeDependencies package="." />
 
     <include package=".folderzone" />
+    <include package=".parcellings" />
 
     <!-- Register the installation GenericSetup extension profile -->
     <genericsetup:registerProfile

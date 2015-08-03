@@ -20,14 +20,14 @@ class DisonImporterControlPanel(ImporterControlPanel):
     import_form = DisonImporterSettings
 
 
-class DisonImporterFromImportSettings(UrbawebImporterFromImportSettings):
+class LicencesImporterFromImportSettings(UrbawebImporterFromImportSettings):
     """ """
 
     def get_importer_settings(self):
         """
         Return the db name to read.
         """
-        settings = super(DisonImporterFromImportSettings, self).get_importer_settings()
+        settings = super(LicencesImporterFromImportSettings, self).get_importer_settings()
 
         db_settings = {
             'db_name': 'Tab_Urba 97.mdb',

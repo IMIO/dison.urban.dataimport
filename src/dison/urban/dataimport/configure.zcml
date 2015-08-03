@@ -42,8 +42,15 @@
 
     <adapter
         for="dison.urban.dataimport.settings.DisonImporterSettingsForm"
-        factory=".settings.DisonImporterFromImportSettings"
+        factory=".settings.LicencesImporterFromImportSettings"
         provides="imio.urban.dataimport.urbaweb.interfaces.IUrbawebDataImporter"
+    />
+
+    <adapter
+        for="imio.urban.dataimport.interfaces.IImportSettingsForm"
+        factory=".settings.LicencesImporterFromImportSettings"
+        provides="imio.urban.dataimport.urbaweb.interfaces.IUrbawebDataImporter"
+        name="Dison licences"
     />
 
 </configure>

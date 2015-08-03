@@ -10,7 +10,7 @@ class FolderZonesImporterFromImportSettings(AccessImporterFromImportSettings):
     def __init__(self, settings_form, importer_class=FolderZonesImporter):
         """
         """
-        super(AccessImporterFromImportSettings, self).__init__(settings_form, importer_class)
+        super(FolderZonesImporterFromImportSettings, self).__init__(settings_form, importer_class)
 
     def get_importer_settings(self):
         """

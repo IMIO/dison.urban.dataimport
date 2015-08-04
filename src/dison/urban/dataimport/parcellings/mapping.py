@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from dison.urban.dataimport.parcellings.mappers import IdMapper
 from dison.urban.dataimport.parcellings.mappers import ParcellingFactory
 from dison.urban.dataimport.parcellings.mappers import TitleMapper
 
@@ -20,15 +21,15 @@ FIELDS_MAPPINGS = {
         'mappers': {
             SimpleMapper: (
                 {
-                    'from': 'Cle_Lot',
-                    'to': 'id',
-                },
-                {
                     'from': 'Autorise',
                     'to': 'authorizationDate',
                 },
                 {
-                    'from': 'Lot',
+                    'from': 'NBL',
+                    'to': 'numberOfParcels',
+                },
+                {
+                    'from': 'Rem_Lotis',
                     'to': 'changesDescription',
                 },
             ),
@@ -36,6 +37,11 @@ FIELDS_MAPPINGS = {
             TitleMapper: {
                 'from': 'Lotis',
                 'to': ('label', 'subdividerName'),
+            },
+
+            IdMapper: {
+                'from': 'Lotis',
+                'to': 'id',
             },
         },
     },

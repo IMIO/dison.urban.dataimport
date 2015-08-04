@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from imio.urban.dataimport.access.mapper import AccessMapper as Mapper
+from imio.urban.dataimport.exceptions import NoObjectToCreateException
 from imio.urban.dataimport.factory import BaseFactory
+
+from Products.CMFPlone.utils import normalizeString
 
 import re
 
@@ -21,6 +24,9 @@ class TitleMapper(Mapper):
 
     def mapLabel(self, line):
         title = self.getData('Lotis')
+        if not title:
+            raise NoObjectToCreateException
+
         title = re.search(self.regex, title)
         if title:
             return title.group('label')
@@ -28,7 +34,18 @@ class TitleMapper(Mapper):
 
     def mapSubdividername(self, line):
         title = self.getData('Lotis')
+        if not title:
+            raise NoObjectToCreateException
+
         title = re.search(self.regex, title)
         if title:
             return title.group('subdivider')
         return ''
+
+
+class IdMapper(Mapper):
+
+    def mapId(self, line):
+        title = self.getData('Lotis')
+        parcelling_id = normalizeString(title)
+        return parcelling_id

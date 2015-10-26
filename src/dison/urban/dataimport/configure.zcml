@@ -15,6 +15,7 @@
     <includeDependencies package="." />
 
     <include package=".folderzone" />
+    <include package=".licences" />
     <include package=".parcellings" />
 
     <!-- Register the installation GenericSetup extension profile -->
@@ -38,19 +39,6 @@
         for="Products.CMFPlone.interfaces.IPloneSiteRoot"
         class=".settings.DisonImporterControlPanel"
         permission="zope2.View"
-    />
-
-    <adapter
-        for="dison.urban.dataimport.settings.DisonImporterSettingsForm"
-        factory=".settings.LicencesImporterFromImportSettings"
-        provides="imio.urban.dataimport.urbaweb.interfaces.IUrbawebDataImporter"
-    />
-
-    <adapter
-        for="imio.urban.dataimport.interfaces.IImportSettingsForm"
-        factory=".settings.LicencesImporterFromImportSettings"
-        provides="imio.urban.dataimport.urbaweb.interfaces.IUrbawebDataImporter"
-        name="Dison licences"
     />
 
 </configure>
